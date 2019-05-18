@@ -93,6 +93,26 @@ namespace CapitalCityQuiz.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap memcity {
+            get {
+                object obj = ResourceManager.GetObject("memcity", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap memcity2 {
+            get {
+                object obj = ResourceManager.GetObject("memcity2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pixelBackground {
             get {
                 object obj = ResourceManager.GetObject("pixelBackground", resourceCulture);
@@ -106,6 +126,16 @@ namespace CapitalCityQuiz.Properties {
         internal static System.Drawing.Bitmap pixelHeart {
             get {
                 object obj = ResourceManager.GetObject("pixelHeart", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Untitled_1 {
+            get {
+                object obj = ResourceManager.GetObject("Untitled-1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

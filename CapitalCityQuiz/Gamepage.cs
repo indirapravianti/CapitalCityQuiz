@@ -15,22 +15,25 @@ namespace CapitalCityQuiz
         int i;
         int countdown;
         int life = 3;
-        int score = 0;
+        public static int score;
+        Table table;
         public Gamepage()
         {
             InitializeComponent();
+            score = 0;
             Build();
             InitializeTimer();
         }
 
         public void Build()
         {
-            timer1.Start();
+            if (countdown == -1)
+                timer1.Start();
             string trueAnswer = GetCountryName();
             labelQuestion.Text = "What is the capital city of " + trueAnswer + "?";
             labelQuestion.MaximumSize = new Size(450, 0);
             labelQuestion.AutoSize = true;
-            setRadioButtonText(trueAnswer);
+            SetRadioButtonText(trueAnswer);
             countdown = 12;
             lblScore.Text = "Score: " + score.ToString();
             answerDesc.Hide();
@@ -45,7 +48,7 @@ namespace CapitalCityQuiz
             return countryName;
         }
 
-        public void setRadioButtonText(string correctCountry)
+        public void SetRadioButtonText(string correctCountry)
         {
             Dictionary<string, string> dict = new Dictionary<string, string>();
             dict = Country.GetCountryName();
@@ -82,11 +85,6 @@ namespace CapitalCityQuiz
             }
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void timer1_Tick_1(object sender, EventArgs e)
         {
 
@@ -103,11 +101,14 @@ namespace CapitalCityQuiz
                 else if (life == 0)
                 {
                     heart1.Hide();
-                    //MessageBox.Show("GAME OVER");
-                    Gamepage gamepage = new Gamepage();
-                    gamepage.Close();
+                    AddScore();
+                    timer1.Stop();
+                    this.Close();
+                    Form1 form1 = new Form1();
+                    form1.Show();
                 }
                 Build();
+                
             }
         }
 
@@ -159,11 +160,29 @@ namespace CapitalCityQuiz
                 {
                     heart1.Hide();
                     //MessageBox.Show("GAME OVER");
-                    Gamepage gamepage = new Gamepage();
-                    gamepage.Close();
+                    AddScore();
+                    timer1.Stop();
+                    this.Close();
+                    Form1 form1 = new Form1();
+                    form1.Show();
                 }
             }
             Build();
+        }
+
+        private void AddScore()
+        {
+            using (var db = new UsernameModel())
+            {
+                table = new Table
+                {
+                    Username = PlayerNameInput.Username,
+                    Score = score,
+               };
+                db.Tables.Add(table);
+                db.SaveChanges();
+                Close();
+            }
         }
     }
 }

@@ -20,8 +20,8 @@ namespace CapitalCityQuiz
         private void btnPlay_Click_1(object sender, EventArgs e)
         {
             this.Hide();
-            Gamepage gamepage = new Gamepage();
-            gamepage.Show();
+            PlayerNameInput playername = new PlayerNameInput();
+            playername.Show();
         }
 
         private void btnHighscore_Click_1(object sender, EventArgs e)

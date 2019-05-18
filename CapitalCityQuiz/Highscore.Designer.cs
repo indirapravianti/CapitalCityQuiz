@@ -28,8 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Highscore));
             this.lblHighscore = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
+            this.lblUsername = new System.Windows.Forms.Label();
+            this.lblScore = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblHighscore
@@ -62,6 +65,28 @@
             this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
+            // lblUsername
+            // 
+            this.lblUsername.AutoSize = true;
+            this.lblUsername.BackColor = System.Drawing.Color.Transparent;
+            this.lblUsername.Font = new System.Drawing.Font("AvenirNext LT Pro Demi", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsername.Location = new System.Drawing.Point(224, 145);
+            this.lblUsername.Name = "lblUsername";
+            this.lblUsername.Size = new System.Drawing.Size(76, 26);
+            this.lblUsername.TabIndex = 13;
+            this.lblUsername.Text = "label1";
+            // 
+            // lblScore
+            // 
+            this.lblScore.AutoSize = true;
+            this.lblScore.BackColor = System.Drawing.Color.Transparent;
+            this.lblScore.Font = new System.Drawing.Font("AvenirNext LT Pro Demi", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblScore.Location = new System.Drawing.Point(477, 147);
+            this.lblScore.Name = "lblScore";
+            this.lblScore.Size = new System.Drawing.Size(76, 26);
+            this.lblScore.TabIndex = 14;
+            this.lblScore.Text = "label2";
+            // 
             // Highscore
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -69,10 +94,13 @@
             this.BackgroundImage = global::CapitalCityQuiz.Properties.Resources.backgroundQuiz;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblScore);
+            this.Controls.Add(this.lblUsername);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.lblHighscore);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Highscore";
-            this.Text = "Highscore";
+            this.Text = "MemCity";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -82,5 +110,7 @@
 
         private System.Windows.Forms.Label lblHighscore;
         private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Label lblUsername;
+        private System.Windows.Forms.Label lblScore;
     }
 }
